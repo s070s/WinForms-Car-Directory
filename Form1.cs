@@ -4,7 +4,7 @@ namespace WinFormsApp
 {
     public partial class Form1 : Form
     {
-        private string databaseFile = "C:\\Users\\GS\\Desktop\\WinFormsApp\\Db\\mydatabase.db";
+        private string databaseFile = AppContext.BaseDirectory + "\\Db\\mydatabase.db";
         private string? connectionString;
         string? selectedID;
         public Form1()
@@ -22,9 +22,9 @@ namespace WinFormsApp
 
         private void CreateDatabaseFile()
         {
-            if (!Directory.Exists("C:\\Users\\GS\\Desktop\\WinFormsApp\\Db"))
+            if (!Directory.Exists(AppContext.BaseDirectory + "\\Db"))
             {
-                Directory.CreateDirectory("C:\\Users\\GS\\Desktop\\WinFormsApp\\Db");
+                Directory.CreateDirectory(AppContext.BaseDirectory + "\\Db");
             }
             if (!File.Exists(databaseFile))
             {
